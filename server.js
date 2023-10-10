@@ -21,10 +21,10 @@ mongoose.connect(process.env.URL_DB, {
   useUnifiedTopology: true
 })
   .then(() => {
-    console.log('[+] Connected to Azure Cosmos DB with MongoDB API')
+    console.log('[+] Connected to Atlas MongoDB')
   })
   .catch((err) => {
-    console.error('[-] Failed to connect to Azure Cosmos DB', err)
+    console.error('[-] Failed to connect to Atlas MongoDB', err)
   })
 
 // Listen on a port
