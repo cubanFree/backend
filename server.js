@@ -5,11 +5,10 @@ const cors = require('cors')
 
 const app = express()
 
+// Middleware
+app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
-
-// Middleware CORS
-app.use(cors())
 
 // Routes
 const userRoutes = require('./routes/userOptions')
@@ -21,10 +20,10 @@ mongoose.connect(process.env.URL_DB, {
   useUnifiedTopology: true
 })
   .then(() => {
-    console.log('[+] Connected to Atlas MongoDB')
+    console.log('[+] Connected to Atlas MongoDB (Development)')
   })
   .catch((err) => {
-    console.error('[-] Failed to connect to Atlas MongoDB', err)
+    console.error('[-] Failed to connect to Atlas MongoDB (Development)', err)
   })
 
 // Listen on a port
