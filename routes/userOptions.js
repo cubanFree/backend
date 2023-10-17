@@ -154,6 +154,7 @@ route.get('/contacts/:id', async (req, res) => {
     const { id } = req.params
     if (!id) return res.status(400).send({ message: 'Id not found!' })
     const contacts = await ChatModel.findOne({ refUser: id })
+    if (!contacts || !contacts.contacts.length) return res.status(404).send({ message: 'Contacts not found!' })
     return res.status(200).send({ refUser: contacts.refUser, contacts: contacts.contacts })
   } catch (err) {
     res.status(404).send({ message: err })
