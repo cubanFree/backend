@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 require('dotenv').config()
 const cors = require('cors')
 
-// Initialize app
+// Initialize
 const app = express()
 
 // Middleware
