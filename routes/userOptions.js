@@ -424,6 +424,7 @@ route.delete('/delete-request/:id', async (req, res) => {
   }
 })
 
+// JWT implement
 // Función para generar un token JWT (debes implementar esta función según tus necesidades)
 // function generateJWT(userId) {
 //   // Aquí debes usar una biblioteca como jsonwebtoken para generar un token JWT
